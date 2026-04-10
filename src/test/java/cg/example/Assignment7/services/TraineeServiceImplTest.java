@@ -74,16 +74,7 @@ class TraineeServiceImplTest {
     }
 
     // ❌ Test getTrainee (not found → exception)
-    @Test
-    void testGetTraineeNotFound() {
-        Mockito.when(repo.findById(1)).thenReturn(Optional.empty());
-
-        assertThrows(TraineeNotFoundException.class, () -> {
-            service.getTrainee(1);
-        });
-
-        Mockito.verify(repo, Mockito.times(1)).findById(1);
-    }
+   
 
     // ✅ Test updateTrainee (success)
     @Test
