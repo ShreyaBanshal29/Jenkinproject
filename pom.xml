@@ -69,6 +69,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			 <plugin>
+                  <groupId>org.sonarsource.scanner.maven</groupId>
+				  <artifactId>sonar-maven-plugin</artifactId>
+                  <version>5.0.0.4389</version> <!-- Use the latest version -->
+			 </plugin>
 		</plugins>
 	</build>
 
