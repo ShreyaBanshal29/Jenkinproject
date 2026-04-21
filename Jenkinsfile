@@ -62,13 +62,14 @@ pipeline {
             }
         }
 
-        stage('Deploy using Docker Compose') {
-            steps {
-                bat '''
-                    docker-compose down
-                    docker-compose up -d --build
-                    '''
-            }
-        }
+        stage('Deploy') {
+    steps {
+        bat '''
+        docker compose down
+        docker compose pull
+        docker compose up -d
+        '''
+    }
+}
     }
 }
