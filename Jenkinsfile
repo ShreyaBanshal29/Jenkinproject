@@ -56,6 +56,11 @@ pipeline {
                 bat 'docker push %DOCKERHUB_USER%/traineeapi:latest'
             }
         }
+        stage('Create Network') {
+            steps {
+                bat 'docker network create mynetwork || exit 0'
+            }
+        }
 
         stage('Deploy using Docker Compose') {
             steps {
