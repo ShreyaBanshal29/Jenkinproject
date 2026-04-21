@@ -57,12 +57,12 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+        stage('Deploy using Docker Compose') {
             steps {
                 bat '''
-                docker rm -f traineeapi-container || exit 0
-                docker run -d -p 8081:8080 --name traineeapi-container traineeapi
-                '''
+                    docker-compose down
+                    docker-compose up -d --build
+                    '''
             }
         }
     }
