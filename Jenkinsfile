@@ -16,17 +16,17 @@ pipeline {
 
         stage('Build JAR') {
             steps {
-                dir('TraineeAPI') {
+             
                     bat 'mvn clean package -DskipTests'
-                }
+                
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                dir('TraineeAPI') {
+             
                     bat 'docker build -t traineeapi .'
-                }
+                
             }
         }
 
